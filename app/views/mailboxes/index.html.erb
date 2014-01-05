@@ -1,0 +1,6 @@
+<h1>blah </h1>
+
+<%= form_tag search_mailboxes_path, method: :get do %>
+    <%= text_field_tag 'search' , nil, placeholder: 'Enter address' %>
+    <%= submit_tag "Search" %>
+<% end %>

@@ -1,0 +1,43 @@
+ <center>
+<h1>Find a Mailbox </h1>
+<h2>Locate USPS mailboxes near you.</h2>
+
+<br></br>
+
+<body
+
+<h2>
+
+  <%= simple_form_for search_path, => :get do |f| %>
+  <%= f.input :search %>
+  <%= f.button :submit %>
+<% end %>
+
+</h2>
+
+<!--<h2> ******************* -->
+<%#= form_tag '/search', method: :get do %>
+    <%#= label_tag 'search ', "Search" %>
+    <%=# text_field_tag 'search' %>
+    <%= #submit_tag 'search'%>
+    <% #end %>
+    <%=  #simple_form_for @user do |f|
+<!-- <!-- inital code from here below -->
+    <!-- ### Add JavaScript-- Add prompt to "enter address" on all form fields
+<br></br>
+<div>
+  <h2>OR search along a route</h2>
+</div>
+<br></br>-->
+  <!-- <h2><%= #form_tag 'search_path', method: :get do %> -->
+     <%= #label_tag 'q', "Starting location:" %>
+     <%=# text_field_tag 'q' %>
+    <%= #label_tag 'q', "End destination:" %>
+    <%= #text_field_tag 'q' %>
+    <%= #submit_tag 'search' %>
+    <% #end %>
+
+
+
+   </center>
+</body>
