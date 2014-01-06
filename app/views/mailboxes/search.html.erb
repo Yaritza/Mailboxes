@@ -1,0 +1,11 @@
+<h1> On search.html.erb </h1>
+
+<div>
+  <!-- Finds mailboxes within a **20 mi ** radius of the search query -->
+<dl>
+            <% Mailbox.near(@query, 1).each do |m| %>
+   <dt> <%= m.address %></dt>
+  <dd> <%= m.distance_from(@query).round(2) %> mi.</dd>
+            <% end %>
+</dl>
+</div>

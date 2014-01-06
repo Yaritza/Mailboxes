@@ -4,22 +4,25 @@ before_action :authenticate_user!, only: [:new, :create]
 
 
   def index
-    # @current_location = request.ip
-    # @query = params['query']
-    #@mailboxes = Mailbox.where('zip LIKE :query OR address LIKE :query', query: "%#{query}%")
-    #Not a real search !! narrow search by proximity, or by proximity and collection times!!
+      @query = params[:search]
   end
 
-      def search
-        binding.pry
-      end
+  def search
+      @query = params[:search]
+
+  end
 
   def show
-    @mailboxes =  Mailbox.find params[:id]
+
   end
 end
 
  #*********(originally used code is below this point)**********************
+
+### Add collection day and time json to seeds
+### Scrape for more seeds###
+
+
 #     @marker = Gmaps4rails.build_markers(@mailboxes) do |mailbox, marker|
 #       marker.lat mailbox.latitude
 #       marker.lng mailbox.longitude

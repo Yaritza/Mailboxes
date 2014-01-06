@@ -1,6 +1,17 @@
-<h1>blah </h1>
+<div>
+<h1>Bluebox Finder</h1>
+<h5>The Manhattan Beta Edition</h5>
+<br></br>
+<h2>Locate USPS mailboxes near you.</h2>
+<div>
 
-<%= form_tag search_mailboxes_path, method: :get do %>
-    <%= text_field_tag 'search' , nil, placeholder: 'Enter address' %>
-    <%= submit_tag "Search" %>
-<% end %>
+<br></br>
+
+<div>
+  <%= form_tag search_mailboxes_path, method: :get do %>
+  <%= text_field_tag 'search' , nil, placeholder: ' Enter an address' %>
+  <%= radio_button_tag(:ip_address, "ip_address") %>
+  <%= label_tag(:ip_address, "Use my current address") %>
+  <%= submit_tag "Search!" %>
+  <% end %>
+</div>

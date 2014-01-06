@@ -1,26 +1,10 @@
 class Mailbox < ActiveRecord::Base
 
-  reverse_geocoded_by: latitude, :longitude
-  def  nearby_mailboxes
-    search_coordinates =  [ ] << Geocoder.coordinates(@search).to_f
-    @mailboxes.near( search_coordinates.nearbys(1)) ####
-  end
-
-  def distance_from_search_location_to_mailbox (search_coordinates, mailbox)
-  end
-
-  def nearby_mailboxes
-  end
+geocoded_by :address
+after_validation :geocode, :if => :has_location, :unless => :has_coordinates
 
 end
-# def lookup
 
-  #     full_street_address = @search.compact.join(', ')
-
-  #     geocoded_by :full_street_address
-  #     after_validation :geocode
-
-  # end
 
 
 # #______________ original code from here own_________
