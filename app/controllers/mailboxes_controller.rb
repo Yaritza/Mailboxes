@@ -1,22 +1,38 @@
 class MailboxesController < ApplicationController
 
-before_action :authenticate_user!, only: [:new, :create]
+    before_action :authenticate_user!, only: [:new, :create]
 
 
-  def index
-      @query = params[:search]
-  end
+    def index
+            @query = params[:search]
+    end
 
-  def search
-      @query = params[:search]
+    def search
 
-      @user = current_user
+            @query = params[:search]
+            @user = :current_sign_in_ip
+            @mailboxes = Mailbox.all
 
-  end
+            @hash = Gmaps4rails.build_markers(@mailboxes) do |mailbox, marker|
+                marker.lat mailbox.latitude
+                marker.lng mailbox.longitude
+                marker.infowindow mailbox.address
+                        marker.picture({
+                                   :url => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+                                   :width => "50",
+                                   :height => "50"
+                                   })
+           end
+     end
 
-  def show
+#render json: @markers
 
-  end
+
+      def show
+
+      end
+
+
 end
 
  #*********(originally used code is below this point)**********************

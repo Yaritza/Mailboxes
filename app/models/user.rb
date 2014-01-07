@@ -6,9 +6,8 @@ class User < ActiveRecord::Base
 
 
 # next few lines added directly from: http://www.rubygeocoder.com/
-geocoded_by :ip_address,
-   :latitude => :lat, :longitude => :lon
-after_validation :geocode
+  geocoded_by :current_sign_in_ip
+  after_validation :geocode
 
 end
 
