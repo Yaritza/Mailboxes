@@ -8,10 +8,14 @@
 <br></br>
 
 <div>
+  <h3>Search near:</h3>
   <%= form_tag search_mailboxes_path, method: :get do %>
   <%= text_field_tag 'search' , nil, placeholder: ' Enter an address' %>
-  <%= radio_button_tag(:ip_address, "ip_address") %>
-  <%= label_tag(:ip_address, "Use my current address") %>
+  <%#= radio_button_tag(:ip_address, "ip_address") %>
+  <%#= label_tag(:ip_address, "Use my current address") %>
+<%#= check_box_tag(:ip_address) %>
+<%#= label_tag(:ip_address, "Use my current location") %>
   <%= submit_tag "Search!" %>
   <% end %>
+  <h4>Submit empty field to use your current location.</h4>
 </div>

@@ -10,6 +10,8 @@ before_action :authenticate_user!, only: [:new, :create]
   def search
       @query = params[:search]
 
+      @user = current_user
+
   end
 
   def show
