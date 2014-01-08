@@ -16,12 +16,7 @@ end
 
 
 
-# #______________ original code from here own_________
-#   serialize :collection_hours, JSON
 
-#   ###missing params?
-
-#   #acts_as_gmappable
 
 #   private
 
@@ -31,7 +26,7 @@ end
 
 
 
-#      #  safe_mailbox = params.require(:mailbox).permit(:address, :city, :state, :zip, :latitude, :longitude, :collection_day, :collection_time)
+#      #  safe_mailbox = params.require(:mailbox).permit(:address, :latitude, :longitude, :collection_day, :collection_time)
 #      # @mailboxes.update safe_mailbox
 
 #  # end
