@@ -37,8 +37,6 @@ gem 'geocoder'
 
 gem 'gmaps4rails'
 
-gem 'squeel'
-
 gem 'simple_form'
 
 gem 'bootstrap-sass'

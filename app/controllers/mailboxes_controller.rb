@@ -8,22 +8,32 @@ class MailboxesController < ApplicationController
     end
 
     def search
-
             @query = params[:search]
             @user = :current_sign_in_ip
-            @mailboxes = Mailbox.all
 
-            @hash = Gmaps4rails.build_markers(@mailboxes) do |mailbox, marker|
-                marker.lat mailbox.latitude
-                marker.lng mailbox.longitude
-                marker.infowindow mailbox.address
-                        marker.picture({
-                                   :url => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                                   :width => "50",
-                                   :height => "50"
-                                   })
-           end
-     end
+            @mailboxes = Mailbox.all  #does not work, but why?
+            # @mailboxes = Mailbox.first  #<--------------------------------WORKS!??
+
+            @markers = Gmaps4rails.build_markers(@mailboxes) do |mailbox, marker|
+                    marker.lat mailbox.latitude
+                    marker.lng mailbox.longitude
+            end
+            #render json: @markers
+   end
+
+           #  @hash = Gmaps4rails.build_markers(@mailboxes) do |mailbox, marker|
+           #      marker.lat mailbox.latitude
+           #      marker.lng mailbox.longitude
+           #      marker.infowindow mailbox.address
+           #              marker.picture({
+           #                         :url => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+           #                         :width => "50",
+           #                         :height => "50"
+           #                         })
+           # end
+         #   render json: @markers
+         # end
+
 
 #render json: @markers
 

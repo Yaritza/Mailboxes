@@ -1,7 +1,15 @@
+# class Mailbox < ActiveRecord::Base
+
+# geocoded_by :address
+# after_validation :reverse_geocode, :if => :has_coordinates    #overrides coordinates that do not have known location addresses associated with them.
+# after_validation :geocode, :if => :has_location, :unless => :has_coordinates
+
+# end
+
+
 class Mailbox < ActiveRecord::Base
 
 geocoded_by :address
-after_validation :reverse_geocode, :if => :has_coordinates    #overrides coordinates that do not have known location addresses associated with them.
 after_validation :geocode, :if => :has_location, :unless => :has_coordinates
 
 end
