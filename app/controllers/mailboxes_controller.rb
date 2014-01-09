@@ -11,13 +11,15 @@ class MailboxesController < ApplicationController
             @query = params[:search]
             @user = :current_sign_in_ip
 
-            @mailboxes = Mailbox.all  #does not work, but why?
-            # @mailboxes = Mailbox.first  #<--------------------------------WORKS!??
+           @mailboxes = Mailbox.all  #does not work, but why?
+
+            #@mailboxes = Mailbox.first  #<--------------------------------WORKS!??
 
             @markers = Gmaps4rails.build_markers(@mailboxes) do |mailbox, marker|
                     marker.lat mailbox.latitude
                     marker.lng mailbox.longitude
             end
+
             #render json: @markers
    end
 

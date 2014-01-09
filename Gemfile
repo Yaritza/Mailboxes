@@ -53,6 +53,8 @@ group :development do
   gem "binding_of_caller"
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
+  gem 'pry-rails'
+  gem 'pry'
 end
 
 
