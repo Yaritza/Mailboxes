@@ -13,8 +13,8 @@
 <dl>
 <% if @query.empty? %>
           <% Mailbox.near(@user, 20).each do |m| %>
-           <dt> <%= m.address %></dt>
-          <dd> <%= m.distance_from(@query).round(2) %> mi.</dd>
+           <dt> <%= address = m.address %></dt>
+          <dd> <%= distance = m.distance_from(@query).round(2) %> mi.</dd>
           <% end %>
 
         <%  else  %>
