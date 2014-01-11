@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MailboxEnroute::Application.config.secret_key_base = 'ed119eda025bbc1bdac6dfcf65ea4f0e6ebac73836334940336aa1a998dcdb360485747eb6eea10f77562d485c70f3f7c678242a3ab86464b9e40f23c059ef4f'
+BlueboxFinder::Application.config.secret_key_base = 'ed119eda025bbc1bdac6dfcf65ea4f0e6ebac73836334940336aa1a998dcdb360485747eb6eea10f77562d485c70f3f7c678242a3ab86464b9e40f23c059ef4f'

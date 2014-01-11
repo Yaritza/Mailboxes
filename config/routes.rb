@@ -1,4 +1,4 @@
-MailboxEnroute::Application.routes.draw do
+BlueboxFinder::Application.routes.draw do
 devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
 root 'mailboxes#index'
 resources :mailboxes do
