@@ -3,6 +3,17 @@
 
 <h1> Results:</h1>
 
+<table class="table">
+  <% @results.each do |mailbox| %>
+    <tr>
+      <td><%= mailbox.id %></td>
+      <td><%= mailbox.address %></td>
+      <td><%= mailbox.distance_from(@query).round(2) %></td>
+    </tr>
+  <% end -%>
+</table>
+
+
 
 <div>
   <!-- Finds mailboxes within a **20 mi ** radius of the search query,
@@ -10,23 +21,16 @@
 
 <!-- Empty search query gets geocoded based on user's IP address, aka current location-->
 
-<dl>
-<% if @query.empty? %>
-          <% Mailbox.near(@user, 20).each do |m| %>
-           <dt> <%= address = m.address %></dt>
-          <dd> <%= distance = m.distance_from(@query).round(2) %> mi.</dd>
-          <% end %>
-
-        <%  else  %>
-
-        <% Mailbox.near(@query, 20).each do |m| %>
-       <dt><%= m.address %></dt>
-       <dd><%= m.distance_from(@query).round(2) %> mi.</dd>
-          <% end %>
-
-<% end %>
+<!-- <dl>
+        <%# Mailbox.near(@query, 20).each do |m| %>
+       <dt><%#= m.address %></dt>
+       <dd><%#= m.distance_from(@query).round(2) %> mi.</dd>
+      <%# end %>
 </dl>
-</div>
+</div> -->
+
+
+
 
 
 <div style='width: 800px;'>

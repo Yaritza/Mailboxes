@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 # next few lines added directly from: http://www.rubygeocoder.com/
   geocoded_by :current_sign_in_ip
   after_validation :geocode
+  has_many :stories
 
 end
 
