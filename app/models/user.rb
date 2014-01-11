@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
 
 
 # next few lines added directly from: http://www.rubygeocoder.com/
-  geocoded_by :current_sign_in_ip
+  geocoded_by :current_sign_in_ip #added reference for a post-BEWD upcoming feature.
   after_validation :geocode
-  has_many :stories
+  has_many :favorites
+  has_many :mailboxes, through: :favorites
 
 end
 

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-MailboxEnroute::Application.load_tasks
+BlueboxFinder::Application.load_tasks

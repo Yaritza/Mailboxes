@@ -10,9 +10,7 @@ class MailboxesController < ApplicationController
     def search
             @query = params[:search]
             @user = :current_sign_in_ip
-
-            #@mailboxes = Mailbox.all
-            @results = Mailbox.near(@query, 20).take(10)
+            @results = Mailbox.near(@query, 15).take(10)
             @markers = Gmaps4rails.build_markers(@results) do |mailbox, marker|
                     marker.lat mailbox.latitude
                     marker.lng mailbox.longitude
