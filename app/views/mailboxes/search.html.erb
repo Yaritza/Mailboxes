@@ -17,9 +17,11 @@
       <tr>
         <td><%= mailbox.address %></td>
         <td><%= mailbox.distance_from(@query).round(2) %>  miles</td>
-        <td><%= button_to("Make a Favorite", favorites_path(mailbox_id: mailbox.id, address_searched: @query), method: :post) %></td>
+        <% if user_signed_in? %>
+        <td><%= button_to("Make a Favorite", favorites_path(mailbox_id: mailbox.id, address_searched: @query, user_id: current_user.id)) %></td>
+        <% end %>
       </tr>
-  <% end -%>
+  <% end %>
 </tbody>
 </table>
 
