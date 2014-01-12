@@ -6,6 +6,7 @@ resources :mailboxes do
       get 'search'
   end
 end
+resources :favorites, only: [:create, :index, :destroy]
 #REMEMBER TO LIMIT RESOURCES ONLY TO WHAT'S APPLICABLE
 
 

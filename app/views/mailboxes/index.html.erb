@@ -10,10 +10,17 @@
 
 <div>
   <h3>Search near:</h3>
+  <!-- Search fiield for search address -->
       <%= form_tag search_mailboxes_path, method: :get do %>
       <%= text_field_tag 'search' , nil, placeholder: ' Enter an address' %>
       <%= submit_tag "Search!" %>
       <% end %>
 
 </div>
-
+<div>
+  <!-- Drop down menu of favorate user search locations -->
+ <%#= f.select :favorites, #method: :get do
+  User.favorites.all.map { |fave| [fave.address_searched, fave.id] },
+  { include_blank: true },
+  %>
+</div>
