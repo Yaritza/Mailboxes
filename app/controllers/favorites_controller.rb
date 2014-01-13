@@ -12,7 +12,8 @@ def index
   end
 
   def destroy
-    @favorite = Favorite.destroy safe_favorite
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
     redirect_to favorites_path
   end
 

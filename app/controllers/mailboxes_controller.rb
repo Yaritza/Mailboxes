@@ -5,7 +5,7 @@ class MailboxesController < ApplicationController
 
     def index
             @query = params[:search]
-            # if @query.empty?
+            # if @query.empty? <--need validations , no blank query's or queries wihtout a state , or else error message"
             #     flash[:notice] = "Please enter an address or landmark"
             #     redirect_to root_path
            # end
@@ -13,7 +13,10 @@ class MailboxesController < ApplicationController
 
     def search
 
+
             @query = params[:search]
+
+
             @address_searched = :search
             @user = :current_sign_in_ip
             #Geocode locates mailboxes within 10 mile radius from user's search "@query" and shows the closest 10 mailboxes.
