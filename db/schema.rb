@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110194537) do
+ActiveRecord::Schema.define(version: 20140113001320) do
 
   create_table "favorites", force: true do |t|
     t.string   "address_searched"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140110194537) do
     t.string   "address"
     t.string   "city"
     t.integer  "zip"
-    t.integer  "location_id"
+    t.string   "location_id"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at"

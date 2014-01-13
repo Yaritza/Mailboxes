@@ -40,7 +40,7 @@ gem 'bootstrap-sass'
 
 gem 'rails_layout'
 
-gem 'heroku', '~> 3.2.2'
+gem 'mechanize'
 
 
 group :doc do
