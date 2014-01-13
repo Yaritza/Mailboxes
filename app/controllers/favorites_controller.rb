@@ -1,13 +1,24 @@
 class FavoritesController < ApplicationController
 before_filter :authenticate_user!
+
+def index
+  #@current_user = user_id: current_user
+    @favorites = Favorite.where(user_id: current_user.id)
+  end
+
   def create
     @favorite = Favorite.create safe_favorite
     redirect_to favorites_path
   end
 
-  def index
-    @favorites = Favorite.where(user_id: current_user.id)
+  def destroy
+    @favorite = Favorite.destroy safe_favorite
+    redirect_to favorites_path
+
   end
+  # def index
+  #   @favorites = Favorite.where(user_id: current_user.id)
+  # end
 
    private
 
