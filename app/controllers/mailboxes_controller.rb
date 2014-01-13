@@ -16,6 +16,7 @@ class MailboxesController < ApplicationController
                     marker.lat mailbox.latitude
                     marker.lng mailbox.longitude
                     marker.infowindow mailbox.address
+                    #marker.infowindow mailbox.collection_hours
             end
       end
 
