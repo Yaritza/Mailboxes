@@ -14,11 +14,8 @@ def index
   def destroy
     @favorite = Favorite.destroy safe_favorite
     redirect_to favorites_path
-
   end
-  # def index
-  #   @favorites = Favorite.where(user_id: current_user.id)
-  # end
+
 
    private
 

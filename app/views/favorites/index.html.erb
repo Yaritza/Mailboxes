@@ -1,15 +1,10 @@
-<!-- <ul>
-<%# @favorites.each do |mailbox| %>
-<li><%#=  Mailbox.find(mailbox.mailbox_id).address %></li>
-<li>near: <%#= mailbox.address_searched %></li>
-<%# end %>
-</ul> -->
+<!-- Creates a table of favorite mailboxes saved corresponding addresses, and the location query in which mailbox was returned  -->
 <center>
 <table class="table">
     <thead>
           <tr>
               <th>Mailbox location</th>
-              <th>Search reference address</th>
+              <th>Nearby reference</th>
               <th></th>
           </tr>
       </thead>
@@ -18,7 +13,7 @@
             <tr>
                   <% @favorites.each do |mailbox| %>
                 <td><%= Mailbox.find(mailbox.mailbox_id).address %></td>
-                <td>near: <%= mailbox.address_searched.capitalize %></td>
+                <td><%= mailbox.address_searched.upcase %></td>
 
 
                   <% if user_signed_in? %>
