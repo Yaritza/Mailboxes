@@ -16,5 +16,5 @@ And, finally,
 
 In the development side, "Better-Errors", "binding_of_caller", and "pry-rails" were used for troubleshooting code.
 
-A list of features to be implemented as a continuing project is found in the lib under "the future."
+A list of features to be implemented in this continuing project is found in the lib under "the future."
 
