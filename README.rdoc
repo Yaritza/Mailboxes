@@ -1,6 +1,6 @@
 == README
 
-Bluebox Finder is a USPS mailbox locator for the Manhattan area. This RoR app allows users to search a mailbox database by address and landmark names. A user's query will generate a list of 10 of the  closest mailboxes, and a map with pins for all the results. The map's infoboxes display the corresponding mailbox addresses.
+Bluebox Finder is a USPS mailbox locator for the Manhattan area. This RoR app allows users to search for nearby mailboxes on the app's database by address or landmark name. A user's query will generate a list of 10 of the  closest mailboxes, and a map with pins for all the results. The map's infoboxes display the corresponding mailbox addresses.
 Users that are logged in have access the favorites feature, in which they can add mailboxes from a list of search results (a list of mailbox addresses) into the queue. The queue can be edited by the user in the way that mailboxes can be removed. A link on the homepage also communicate the user directly to their queue of favorites.
 
 Bluebox Finder was writtrn in Ruby version 2.0, and Rails 4. Three gems added to the production side of this app, were:
